@@ -13,10 +13,32 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
+
+	<servlet>
+		<servlet-name>msqStatus</servlet-name>
+		<servlet-class>com.testin.thunder.monitor.MQSStatus</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>msqStatus</servlet-name>
+		<url-pattern>/msqStatus</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>topoStatus</servlet-name>
+		<servlet-class>com.testin.thunder.monitor.TopologyStatus</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>topoStatus</servlet-name>
+		<url-pattern>/topoStatus</url-pattern>
+	</servlet-mapping>
+
     <session-config>
         <session-timeout>
             30
