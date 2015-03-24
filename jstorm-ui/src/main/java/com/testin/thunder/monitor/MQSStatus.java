@@ -52,9 +52,9 @@ public class MQSStatus extends HttpServlet {
             CloudQueue queue = client.getQueueRef(mqs_queue_name);
             
             QueueMeta meta = queue.getAttributes();
-            result = "{queuename:" + mqs_queue_name + ", activeMessages:" + meta.getActiveMessages() + ", delayMessages:" + 
-                    meta.getDelayMessages() + ", inactiveMessages=" + meta.getInactiveMessages() + ", maxMessageSize:" + 
-                    meta.getMaxMessageSize() + "}"; 
+            result = "{\"queuename\":\"" + mqs_queue_name + "\", \"activeMessages\":\"" + meta.getActiveMessages() + "\", \"delayMessages:\"" + 
+                    meta.getDelayMessages() + "\", \"inactiveMessages\":\"" + meta.getInactiveMessages() + "\", \"maxMessageSize\":\"" + 
+                    meta.getMaxMessageSize() + "\"}"; 
         } catch (ServiceException ex) {
             logger.error("failed to query mqs=" + mqs_queue_name , ex);
             result = ex.getMessage();
